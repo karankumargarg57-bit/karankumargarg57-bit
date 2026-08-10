@@ -1,94 +1,213 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Karan Kumar - Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f9; padding: 20px; }
-        .card { background: white; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h1 { color: #333; }
-        p { color: #666; }
-        .btn { display: inline-block; padding: 10px 20px; margin: 10px; color: white; background-color: #2ea44f; text-decoration: none; border-radius: 5px; font-weight: bold; }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <h1>Karan Kumar 👋</h1>
-        <p>Web Developer & Open Source Creator</p>
-        <hr>
-        <p>Welcome to my portfolio! I build websites and useful digital tools.</p>
-        <a class="btn" href="https://github.com/karankumargarg57-bit">My GitHub Profile</a>
-    <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me - Karan Kumar</title>
+    <title>Karan Kumar - Web Developer & Creator</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-        
-        .contact-container { background: #ffffff; width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); padding: 30px; text-align: center; }
-        .contact-container h1 { color: #1a1a1a; font-size: 24px; margin-bottom: 8px; }
-        .contact-container p { color: #666666; font-size: 14px; margin-bottom: 24px; }
-        
-        .social-links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-        .btn-link { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none; color: white; transition: transform 0.2s, opacity 0.2s; }
-        .btn-link:active { transform: scale(0.98); }
-        
-        .btn-email { background-color: #007bff; }
-        .btn-whatsapp { background-color: #25d366; }
-        .btn-github { background-color: #24292e; }
+        /* === मुख्य स्टाइल्स (CSS) === */
+        :root {
+            --bg-color: #0d1117; /* डार्क बैकग्राउंड */
+            --card-bg: #161b22;  /* थोड़ा हल्का डार्क कार्ड के लिए */
+            --text-main: #c9d1d9; /* मुख्य टेक्स्ट का रंग */
+            --text-sub: #8b949e;  /* हल्के टेक्स्ट का रंग */
+            --primary-accent: #2ea44f; /* हरा रंग (GitHub स्टाइल) */
+            --secondary-accent: #007bff; /* नीला रंग */
+            --shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-        .divider { display: flex; align-items: center; text-align: center; color: #aaa; font-size: 12px; margin: 20px 0; }
-        .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid #eee; }
-        .divider::before { margin-right: .5em; }
-        .divider::after { margin-left: .5em; }
-
-        .form-group { margin-bottom: 15px; text-align: left; }
-        .form-group label { display: block; font-size: 13px; color: #333; margin-bottom: 5px; font-weight: 500; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; outline: none; }
-        .form-group input:focus, .form-group textarea:focus { border-color: #007bff; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
         
-        .btn-submit { width: 100%; background-color: #2ea44f; color: white; border: none; padding: 12px; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main);
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh; 
+            padding: 40px 20px; 
+            line-height: 1.6;
+        }
+
+        /* खुलने पर एनिमेशन */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-container { 
+            width: 100%; 
+            max-width: 650px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 25px; 
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        /* === कार्ड्स की स्टाइल === */
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 16px; 
+            padding: 30px; 
+            border: 1px solid #30363d;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: #444c56;
+        }
+        
+        /* === हेडर सेक्शन === */
+        .header-card { text-align: center; }
+        .profile-img-placeholder {
+            width: 90px; height: 90px;
+            background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent));
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 32px; font-weight: bold; color: white;
+        }
+        .header-card h1 { color: #f0f6fc; font-size: 28px; margin-bottom: 5px; }
+        .header-card p { color: var(--text-sub); font-size: 16px; font-weight: 500; }
+
+        /* === हेडिंग्स === */
+        h2 { 
+            color: #f0f6fc; 
+            font-size: 22px; 
+            margin-bottom: 20px; 
+            display: flex; align-items: center; gap: 10px;
+        }
+        h2::after {
+            content: ''; flex: 1; height: 1px; background: #30363d;
+        }
+
+        /* === प्रोजेक्ट्स सेक्शन === */
+        .project-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        
+        @media (min-width: 500px) {
+            .project-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .project-item { 
+            background: rgba(255,255,255,0.03); 
+            border-radius: 10px; 
+            padding: 18px; 
+            border: 1px solid transparent;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+        .project-item:hover {
+            background-color: rgba(255,255,255,0.05);
+            border-color: var(--secondary-accent);
+        }
+        .project-item h3 { font-size: 17px; color: #58a6ff; margin-bottom: 8px; }
+        .project-item p { font-size: 14px; color: var(--text-sub); margin-bottom: 12px; }
+        .project-link { 
+            display: inline-block; font-size: 13px; font-weight: bold; 
+            color: #ffffff; background-color: #21262d; 
+            padding: 7px 14px; border-radius: 6px; 
+            text-decoration: none; border: 1px solid #30363d;
+            transition: background 0.2s;
+        }
+        .project-link:hover { background-color: #30363d; }
+
+        /* === कॉन्टैक्ट बटन === */
+        .social-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 25px; }
+        .btn-link { 
+            display: flex; align-items: center; justify-content: center; 
+            gap: 10px; padding: 14px; border-radius: 8px; 
+            font-weight: 600; text-decoration: none; color: white; 
+            transition: opacity 0.2s, transform 0.1s;
+        }
+        .btn-link:active { transform: scale(0.97); }
+        .btn-email { background-color: var(--secondary-accent); }
+        .btn-whatsapp { background-color: #238636; }
+        .btn-github { background-color: #21262d; border: 1px solid #30363d; grid-column: 1 / -1; }
+
+        /* === फॉर्म स्टाइल्स === */
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 13px; color: var(--text-sub); margin-bottom: 6px; font-weight: 500; }
+        .form-group input, .form-group textarea { 
+            width: 100%; padding: 12px; 
+            background-color: var(--bg-color); border: 1px solid #30363d; 
+            border-radius: 8px; color: var(--text-main); 
+            font-size: 14px; outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--secondary-accent);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+        .btn-submit { 
+            width: 100%; 
+            background-color: var(--primary-accent); 
+            color: white; border: none; padding: 14px; 
+            border-radius: 8px; font-size: 16px; font-weight: bold; 
+            cursor: pointer; transition: background-color 0.2s;
+        }
+        .btn-submit:hover { background-color: #2ea44fcc; }
     </style>
 </head>
 <body>
 
-<div class="contact-container">
-    <h1>Get in Touch 📬</h1>
-    <p>क्या आपके पास कोई सवाल या प्रोजेक्ट है? मुझसे संपर्क करें!</p>
-
-    <!-- Direct Quick Links -->
-    <div class="social-links">
-        <a href="mailto:karankumargarg57@gmail.com" class="btn-link btn-email">✉️ Email Me</a>
-        <a href="https://wa.me/919646070491" target="_blank" class="btn-link btn-whatsapp">💬 WhatsApp</a>
-        <a href="https://github.com/karankumargarg57-bit" target="_blank" class="btn-link btn-github">🐙 GitHub Profile</a>
+<div class="main-container">
+    
+    <!-- === हेडर कार्ड === -->
+    <div class="card header-card">
+        <div class="profile-img-placeholder">KK</div>
+        <h1>Karan Kumar</h1>
+        <p>वेब डेवलपर और ओपन सोर्स क्रिएटर</p>
     </div>
 
-    <div class="divider">या मैसेज भेजें</div>
+    <!-- === प्रोजेक्ट्स कार्ड === -->
+    <div class="card">
+        <h2>🚀 मेरे प्रोजेक्ट्स</h2>
+        <div class="project-grid">
+            <!-- प्रोजेक्ट 1 -->
+            <div class="project-item">
+                <h3>पर्स्नल पोर्टफोलियो</h3>
+                <p>एक आधुनिक और अट्रैक्टिव पोर्टफोलियो वेबसाइट, जिसे HTML और CSS से बनाया गया है।</p>
+                <a href="https://github.com/karankumargarg57-bit/karankumargarg57-bit" target="_blank" class="project-link">कोड देखें ↗</a>
+            </div>
+            <!-- प्रोजेक्ट 2 -->
+            <div class="project-item">
+                <h3>ओपन सोर्स टूल्स</h3>
+                <p>उपयोगी टूल्स और स्क्रिप्ट्स जो ओपन-सोर्स कम्युनिटी के लिए तैयार की गई हैं।</p>
+                <a href="https://github.com/karankumargarg57-bit" target="_blank" class="project-link">GitHub प्रोफाइल ↗</a>
+            </div>
+        </div>
+    </div>
 
-    <!-- Contact Form -->
-    <form action="https://formspree.io/f/karankumargarg57@gmail.com" method="POST">
-        <div class="form-group">
-            <label>आपका नाम</label>
-            <input type="text" name="name" placeholder="अपना नाम लिखें" required>
+    <!-- === कॉन्टैक्ट कार्ड === -->
+    <div class="card">
+        <h2>📬 संपर्क करें</h2>
+        
+        <div class="social-links">
+            <a href="mailto:karankumargarg57@gmail.com" class="btn-link btn-email">✉️ ईमेल करें</a>
+            <!-- ध्यान दें: '91XXXXXXXXXX' की जगह अपना WhatsApp नंबर लिखें -->
+            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn-link btn-whatsapp">💬 व्हाट्सएप करें</a>
+            <a href="https://github.com/karankumargarg57-bit" target="_blank" class="btn-link btn-github">🐙 GitHub Profile</a>
         </div>
-        <div class="form-group">
-            <label>आपकी ईमेल</label>
-            <input type="email" name="email" placeholder="example@mail.com" required>
-        </div>
-        <div class="form-group">
-            <label>संदेश (Message)</label>
-            <textarea name="message" rows="4" placeholder="यहाँ अपना संदेश लिखें..." required></textarea>
-        </div>
-        <button type="submit" class="btn-submit">संदेश भेजें</button>
-    </form>
+
+        <form action="https://formspree.io/f/karankumargarg57@gmail.com" method="POST">
+            <div class="form-group">
+                <label>आपका नाम</label>
+                <input type="text" name="name" placeholder="अपना नाम लिखें" required>
+            </div>
+            <div class="form-group">
+                <label>आपकी ईमेल</label>
+                <input type="email" name="email" placeholder="example@mail.com" required>
+            </div>
+            <div class="form-group">
+                <label>संदेश</label>
+                <textarea name="message" rows="4" placeholder="यहाँ अपना संदेश लिखें..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">संदेश भेजें</button>
+        </form>
+    </div>
+
 </div>
 
-</body>
-</html>
-        
-    </div>
 </body>
 </html>
