@@ -18,6 +18,77 @@
         <hr>
         <p>Welcome to my portfolio! I build websites and useful digital tools.</p>
         <a class="btn" href="https://github.com/karankumargarg57-bit">My GitHub Profile</a>
+    <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Karan Kumar</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+        
+        .contact-container { background: #ffffff; width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); padding: 30px; text-align: center; }
+        .contact-container h1 { color: #1a1a1a; font-size: 24px; margin-bottom: 8px; }
+        .contact-container p { color: #666666; font-size: 14px; margin-bottom: 24px; }
+        
+        .social-links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+        .btn-link { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: 8px; font-weight: 600; text-decoration: none; color: white; transition: transform 0.2s, opacity 0.2s; }
+        .btn-link:active { transform: scale(0.98); }
+        
+        .btn-email { background-color: #007bff; }
+        .btn-whatsapp { background-color: #25d366; }
+        .btn-github { background-color: #24292e; }
+
+        .divider { display: flex; align-items: center; text-align: center; color: #aaa; font-size: 12px; margin: 20px 0; }
+        .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid #eee; }
+        .divider::before { margin-right: .5em; }
+        .divider::after { margin-left: .5em; }
+
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; font-size: 13px; color: #333; margin-bottom: 5px; font-weight: 500; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; outline: none; }
+        .form-group input:focus, .form-group textarea:focus { border-color: #007bff; }
+        
+        .btn-submit { width: 100%; background-color: #2ea44f; color: white; border: none; padding: 12px; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="contact-container">
+    <h1>Get in Touch 📬</h1>
+    <p>क्या आपके पास कोई सवाल या प्रोजेक्ट है? मुझसे संपर्क करें!</p>
+
+    <!-- Direct Quick Links -->
+    <div class="social-links">
+        <a href="mailto:karankumargarg57@gmail.com" class="btn-link btn-email">✉️ Email Me</a>
+        <a href="https://wa.me/919646070491" target="_blank" class="btn-link btn-whatsapp">💬 WhatsApp</a>
+        <a href="https://github.com/karankumargarg57-bit" target="_blank" class="btn-link btn-github">🐙 GitHub Profile</a>
+    </div>
+
+    <div class="divider">या मैसेज भेजें</div>
+
+    <!-- Contact Form -->
+    <form action="https://formspree.io/f/karankumargarg57@gmail.com" method="POST">
+        <div class="form-group">
+            <label>आपका नाम</label>
+            <input type="text" name="name" placeholder="अपना नाम लिखें" required>
+        </div>
+        <div class="form-group">
+            <label>आपकी ईमेल</label>
+            <input type="email" name="email" placeholder="example@mail.com" required>
+        </div>
+        <div class="form-group">
+            <label>संदेश (Message)</label>
+            <textarea name="message" rows="4" placeholder="यहाँ अपना संदेश लिखें..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">संदेश भेजें</button>
+    </form>
+</div>
+
+</body>
+</html>
+        
     </div>
 </body>
 </html>
